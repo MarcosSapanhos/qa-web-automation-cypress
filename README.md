@@ -1,33 +1,58 @@
-# QA Web Automation - Cypress
+# QA Web Automation – Cypress
 
-This project is a **QA Automation portfolio** using **Cypress** for end-to-end (E2E) testing.
+Este repositório é um **projeto de portfólio de Automação de Testes em QA**, utilizando **Cypress** para testes end-to-end (E2E) em aplicações web.
 
-The goal of this repository is to demonstrate best practices in **web test automation**, including:
-- Clean test structure
-- Reusable custom commands
-- Use of fixtures for test data
-- Reliable selectors and synchronization
+O objetivo principal é demonstrar **boas práticas reais de automação**, com foco em estabilidade, organização e legibilidade dos testes.
 
 ---
 
-## 🔧 Technologies & Tools
+## 🎯 Objetivos do Projeto
 
-- Cypress** – End-to-End Testing
-- JavaScript**
-- Node.js**
-- VS Code**
-- Chrome Browser**
+- Aplicar boas práticas de automação de testes web
+- Criar testes E2E estáveis e fáceis de manter
+- Utilizar fixtures para dados de teste
+- Separar cenários por responsabilidade
+- Preparar a estrutura para evolução do projeto
 
 ---
 
-## 🌐 Application Under Test
+## 🛠 Tecnologias e Ferramentas
+
+- **Cypress** – Automação de Testes E2E
+- **JavaScript**
+- **Node.js**
+- **VS Code**
+- **Google Chrome**
+
+---
+
+## 🌐 Aplicação Testada
 
 **OrangeHRM Demo**
 
 - URL: https://opensource-demo.orangehrmlive.com
-- Public demo application designed for testing purposes
+- Aplicação pública utilizada para fins de teste
 
 ---
 
-## 📂 Project Structure
+## ✅ Cenários Automatizados
 
+- Login com credenciais válidas
+- Tentativa de login com credenciais inválidas e validação de mensagem de erro
+
+---
+
+## 📁 Estrutura do Projeto
+
+```text
+cypress/
+├─ e2e/
+│  ├─ login-success.cy.js      # Cenário de login com sucesso
+│  └─ login-invalid.cy.js      # Cenário de login inválido
+├─ fixtures/
+│  └─ users.json               # Massa de dados de teste
+├─ pages/
+│  └─ LoginPage.js             # Page Object preparado para uso futuro
+├─ support/
+│  ├─ commands.js              # Comandos customizados do Cypress
+│  └─ e2e.js
