@@ -1,58 +1,98 @@
-# QA Web Automation – Cypress
+# QA Web Automation - Cypress
 
-Este repositório é um **projeto de portfólio de Automação de Testes em QA**, utilizando **Cypress** para testes end-to-end (E2E) em aplicações web.
+## 📌 Descrição
 
-O objetivo principal é demonstrar **boas práticas reais de automação**, com foco em estabilidade, organização e legibilidade dos testes.
+Projeto de automação de testes E2E utilizando **Cypress**, focado em cenários de autenticação (login/logout) da aplicação **OrangeHRM Demo**.
 
----
-
-## 🎯 Objetivos do Projeto
-
-- Aplicar boas práticas de automação de testes web
-- Criar testes E2E estáveis e fáceis de manter
-- Utilizar fixtures para dados de teste
-- Separar cenários por responsabilidade
-- Preparar a estrutura para evolução do projeto
+Este repositório foi criado com objetivo de **estudo, prática e portfólio em QA Automation**, seguindo boas práticas de organização, nomenclatura e versionamento.
 
 ---
 
-## 🛠 Tecnologias e Ferramentas
+## 🧪 Cenários Automatizados
 
-- **Cypress** – Automação de Testes E2E
-- **JavaScript**
-- **Node.js**
-- **VS Code**
-- **Google Chrome**
+### 🔐 Login
 
----
+* Login com credenciais válidas (sucesso)
+* Login com credenciais inválidas
+* Login sem informar senha
+* Login com campos obrigatórios vazios
+* Validação de mensagem de erro para login inválido
 
-## 🌐 Aplicação Testada
+### 🚪 Logout
 
-**OrangeHRM Demo**
+* Logout realizado com sucesso após login válido
 
-- URL: https://opensource-demo.orangehrmlive.com
-- Aplicação pública utilizada para fins de teste
+### 🔒 Segurança / Rota protegida
 
----
-
-## ✅ Cenários Automatizados
-
-- Login com credenciais válidas
-- Tentativa de login com credenciais inválidas e validação de mensagem de erro
+* Tentativa de acesso direto ao dashboard sem autenticação
 
 ---
 
 ## 📁 Estrutura do Projeto
 
-```text
+```
 cypress/
-├─ e2e/
-│  ├─ login-success.cy.js      # Cenário de login com sucesso
-│  └─ login-invalid.cy.js      # Cenário de login inválido
-├─ fixtures/
-│  └─ users.json               # Massa de dados de teste
-├─ pages/
-│  └─ LoginPage.js             # Page Object preparado para uso futuro
-├─ support/
-│  ├─ commands.js              # Comandos customizados do Cypress
-│  └─ e2e.js
+ ├─ e2e/                # Specs de teste (cenários)
+ │   ├─ login-success.cy.js
+ │   ├─ login-invalid.cy.js
+ │   ├─ login-empty-fields.cy.js
+ │   ├─ login-invalid-message.cy.js
+ │   ├─ login-without-password.cy.js
+ │   ├─ logout-success.cy.js
+ │   └─ protected-route.cy.js
+ │
+ ├─ fixtures/           # Massa de dados (se aplicável)
+ ├─ pages/              # Page Objects (em evolução)
+ ├─ support/            # Commands e configurações globais
+```
+
+---
+
+## ▶️ Como Executar o Projeto
+
+### Pré-requisitos
+
+* Node.js instalado
+* Git instalado
+
+### Instalação
+
+```bash
+npm install
+```
+
+### Abrir o Cypress (modo interativo)
+
+```bash
+npm run cy:open
+```
+
+### Executar os testes em modo headless
+
+```bash
+npm run cy:run
+```
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+* Cypress
+* JavaScript
+* Node.js
+* Git / GitHub
+
+---
+
+## 📌 Observações
+
+* O projeto utiliza a aplicação pública **OrangeHRM Demo** apenas para fins de estudo.
+* Alguns cenários de segurança podem ser limitados por regras da aplicação externa.
+
+---
+
+## 👤 Autor
+
+**Marcos Sapanhos**
+
+QA Engineer | Testes Manuais e Automação
