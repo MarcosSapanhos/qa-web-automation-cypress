@@ -12,3 +12,10 @@ import './commands';
 // beforeEach(() => {
 //   // código que deve rodar antes de todos os testes
 // });
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Ignora erros não tratados da aplicação (OrangeHRM Demo)
+  if (err.message.includes('Cannot read properties of undefined')) {
+    return false;
+  }
+});
