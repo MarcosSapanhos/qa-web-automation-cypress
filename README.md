@@ -6,7 +6,7 @@ Projeto de automação de testes E2E utilizando **Cypress**, focado em cenários
 
 Este repositório foi criado com objetivo de **estudo, prática e portfólio em QA Automation**, seguindo boas práticas de organização, nomenclatura e versionamento.
 
----
+
 
 ## 🧪 Cenários Automatizados
 
@@ -22,31 +22,43 @@ Este repositório foi criado com objetivo de **estudo, prática e portfólio em 
 
 * Logout realizado com sucesso após login válido
 
+
+### Navegação
+
+* Validação de menu visível após login
+* Navegação entre módulos
+* Acesso a funcionalidades específicas (ex: Admin, PIM)
+
+
+### Sessão
+
+* Logout por encerramento de sessão
+* Validação de comportamento de refresh de sessão
+
+
 ### 🔒 Segurança / Rota protegida
 
 * Tentativa de acesso direto ao dashboard sem autenticação
 
----
+
 
 ## 📁 Estrutura do Projeto
 
-```
-cypress/
- ├─ e2e/                # Specs de teste (cenários)
- │   ├─ login-success.cy.js
- │   ├─ login-invalid.cy.js
- │   ├─ login-empty-fields.cy.js
- │   ├─ login-invalid-message.cy.js
- │   ├─ login-without-password.cy.js
- │   ├─ logout-success.cy.js
- │   └─ protected-route.cy.js
- │
- ├─ fixtures/           # Massa de dados (se aplicável)
- ├─ pages/              # Page Objects (em evolução)
- ├─ support/            # Commands e configurações globais
-```
 
----
+cypress/
+ ├─ e2e/                    # Testes E2E organizados por domínio
+ │   ├─ login/              # Cenários de autenticação
+ │   ├─ logout/             # Cenários de logout
+ │   ├─ navigation/         # Navegação e menus
+ │   ├─ session/            # Sessão e refresh
+ │   └─ security/           # Segurança e rotas protegidas
+ │
+ ├─ fixtures/               # Massa de dados
+ ├─ pages/                  # Page Objects
+ ├─ support/                # Commands e configs globais
+
+
+
 
 ## ▶️ Como Executar o Projeto
 
